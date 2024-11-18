@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Pizza Hub</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            overflow: hidden;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #ffcc33, #ff5733);
+        }
+
+        /* Dynamic Background Animation */
+        .background {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            overflow: hidden;
+        }
+
+        .background .circle {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            animation: move 20s infinite ease-in-out;
+        }
+
+        .background .circle:nth-child(1) {
+            width: 150px;
+            height: 150px;
+            top: 10%;
+            left: 15%;
+            animation-duration: 25s;
+        }
+
+        .background .circle:nth-child(2) {
+            width: 200px;
+            height: 200px;
+            top: 70%;
+            left: 50%;
+            animation-duration: 30s;
+        }
+
+        .background .circle:nth-child(3) {
+            width: 100px;
+            height: 100px;
+            top: 40%;
+            left: 80%;
+            animation-duration: 35s;
+        }
+
+        @keyframes move {
+            0% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px) translateX(20px);
+            }
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+        /* Content Container */
+        .container {
+            position: relative;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            padding: 40px;
+            max-width: 500px;
+            z-index: 1;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            animation: fadeIn 1.5s ease;
+        }
+
+        .container h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #ff5733;
+            text-transform: uppercase;
+            animation: slideIn 1.5s ease;
+        }
+
+        .container p {
+            font-size: 1.2rem;
+            color: #555;
+            margin-bottom: 30px;
+            animation: slideIn 2s ease;
+        }
+
+        .pizza-image {
+            width: 200px;
+            margin: 20px auto;
+            animation: bounce 2s infinite;
+        }
+
+        /* Premium Buttons */
+        .btn {
+            padding: 15px 30px;
+            margin: 10px 0; /* Adds spacing between buttons */
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: white;
+            text-transform: uppercase;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease-in-out;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.3);
+            transform: skewX(-45deg);
+            transition: all 0.4s ease;
+        }
+
+        .btn:hover::before {
+            left: 150%;
+        }
+
+        .btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .menu-btn {
+            background: linear-gradient(135deg, #ffcc33, #ff5733);
+        }
+
+        /* Footer */
+        .footer {
+            position: fixed;
+            bottom: 10px;
+            width: 100%;
+            text-align: center;
+            color: white;
+            font-size: 0.9rem;
+            z-index: 2;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateY(-30px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-15px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Animated Background -->
+    <div class="background">
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+    </div>
+
+    <!-- Content -->
+    <div class="container">
+        <h1>Welcome to Pizza Hub!</h1>
+        <p>Your ultimate destination for authentic and delicious pizzas. Order now and experience pizza perfection!</p>
+        <img src="https://cdn.grabon.in/gograbon/blog/wp-content/uploads/2023/10/Chicago-Style-Pizza-1.jpg" alt="Pizza" class="pizza-image">
+        <a href="menu.html" class="btn menu-btn">Browse Menu</a>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        &copy; 2024 Sonali Rana. All Rights Reserved.
+    </div>
+</body>
+</html>

@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Pizza Hub</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            overflow: hidden;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #ffcc33, #ff5733);
+        }
+
+        /* Dynamic Background Animation */
+        .background {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            overflow: hidden;
+        }
+
+        .background .circle {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            animation: move 20s infinite ease-in-out;
+        }
+
+        .background .circle:nth-child(1) {
+            width: 150px;
+            height: 150px;
+            top: 10%;
+            left: 15%;
+            animation-duration: 25s;
+        }
+
+        .background .circle:nth-child(2) {
+            width: 200px;
+            height: 200px;
+            top: 70%;
+            left: 50%;
+            animation-duration: 30s;
+        }
+
+        .background .circle:nth-child(3) {
+            width: 100px;
+            height: 100px;
+            top: 40%;
+            left: 80%;
+            animation-duration: 35s;
+        }
+
+        @keyframes move {
+            0% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px) translateX(20px);
+            }
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+        /* Content Container */
+        .container {
+            position: relative;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            padding: 40px;
+            max-width: 800px;
+            z-index: 1;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            animation: fadeIn 1.5s ease;
+        }
+
+        .container h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #ff5733;
+            text-transform: uppercase;
+            animation: slideIn 1.5s ease;
+        }
+
+        .container p {
+            font-size: 1.2rem;
+            color: #555;
+            margin-bottom: 30px;
+            animation: slideIn 2s ease;
+            line-height: 1.6;
+        }
+
+        /* Terms and Conditions Styling */
+        .terms {
+            background: #f9f9f9;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        .terms h2 {
+            font-size: 1.8rem;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .terms p {
+            font-size: 1rem;
+            color: #777;
+            margin-bottom: 15px;
+        }
+
+        /* History Section Styling */
+        .history {
+            background: #f9f9f9;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .history h2 {
+            font-size: 1.8rem;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .history p {
+            font-size: 1rem;
+            color: #777;
+            margin-bottom: 15px;
+        }
+
+        /* Footer */
+        .footer {
+            position: fixed;
+            bottom: 10px;
+            width: 100%;
+            text-align: center;
+            color: white;
+            font-size: 0.9rem;
+            z-index: 2;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateY(-30px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Animated Background -->
+    <div class="background">
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+    </div>
+
+    <!-- Content -->
+    <div class="container">
+        <h1>About Us</h1>
+
+        <!-- Terms and Conditions Section -->
+        <div class="terms">
+            <h2>Terms and Conditions</h2>
+            <p>Welcome to Pizza Hub! By using our website, you agree to the following terms:</p>
+            <ul>
+                <li>We reserve the right to change our menu and pricing at any time without prior notice.</li>
+                <li>All orders placed through the website are subject to availability.</li>
+                <li>Delivery times are estimates and may vary depending on location and traffic conditions.</li>
+                <li>We are not responsible for any allergies or food intolerances; please inquire about ingredients before ordering.</li>
+                <li>By placing an order, you agree to our privacy policy and terms of service.</li>
+            </ul>
+        </div>
+
+        <!-- History Section -->
+        <div class="history">
+            <h2>Our History</h2>
+            <p>Pizza Hub started as a small, family-owned pizzeria in the heart of the city. Founded in 2005, our mission was simple – to provide delicious, high-quality pizzas to our local community. Over the years, our passion for crafting the perfect pizza led us to expand our menu, offering a variety of toppings, crusts, and sauces.</p>
+            <p>In 2010, Pizza Hub launched its online ordering system, allowing customers to enjoy our pizza from the comfort of their homes. Since then, we've grown rapidly, expanding our delivery network and introducing exclusive promotions and seasonal specials. Today, Pizza Hub is proud to serve thousands of customers each day, bringing the joy of pizza to homes across the region.</p>
+            <p>We believe in using only the freshest ingredients and cooking every pizza to perfection, ensuring that each bite is an unforgettable experience. Thank you for choosing Pizza Hub – where every pizza is a masterpiece!</p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        &copy; 2024 Sonali Rana. All Rights Reserved.
+    </div>
+</body>
+</html>
